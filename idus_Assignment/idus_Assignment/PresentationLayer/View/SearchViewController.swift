@@ -9,21 +9,30 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    private var searchVM = SearchViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .systemBackground
+    }
+}
 
-        // Do any additional setup after loading the view.
+private extension SearchViewController {
+    
+    // MARK: Navigation SearchBar 셋팅
+    func setNavigationController(){
+        self.navigationItem.title = "검색"
+        self.navigationItem.searchController = UISearchController(searchResultsController: nil)
+        self.navigationItem.searchController?.searchBar.placeholder = "게임, 앱, 스토리 등"
+        self.navigationItem.searchController?.searchBar.delegate = self
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // ViewModel 한테 유효한지 아닌지 물어봐서 얼럿 띄우기 // 화면전환 로직 수행하기
+        // searchBar.text
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
