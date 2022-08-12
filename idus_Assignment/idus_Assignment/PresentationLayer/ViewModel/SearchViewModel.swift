@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+final class SearchViewModel {
+    
+    func searchAppID(with appID: String){
+        // Notification으로 알리기? 
+    }
+}

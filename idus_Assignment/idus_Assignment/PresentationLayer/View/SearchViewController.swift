@@ -33,6 +33,7 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         // ViewModel 한테 유효한지 아닌지 물어봐서 얼럿 띄우기 // 화면전환 로직 수행하기
         // searchBar.text
+//        searchVM.searchAppID(with: searchBar.text)
     }
     
 }

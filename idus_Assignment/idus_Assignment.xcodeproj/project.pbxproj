@@ -12,6 +12,11 @@
 		B3E5253528A526B800FBA21C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5253428A526B800FBA21C /* ViewController.swift */; };
 		B3E5253A28A526BB00FBA21C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3E5253928A526BB00FBA21C /* Assets.xcassets */; };
 		B3E5253D28A526BB00FBA21C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E5253B28A526BB00FBA21C /* LaunchScreen.storyboard */; };
+		B3E5254F28A53EEE00FBA21C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5254E28A53EEE00FBA21C /* SearchViewController.swift */; };
+		B3E5255128A641AF00FBA21C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5255028A641AF00FBA21C /* SearchViewModel.swift */; };
+		B3E5255628A645DC00FBA21C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5255528A645DC00FBA21C /* Endpoint.swift */; };
+		B3E5255828A646B300FBA21C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5255728A646B300FBA21C /* HTTPMethod.swift */; };
+		B3E5255B28A648C200FBA21C /* Endpointable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5255A28A648C200FBA21C /* Endpointable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		B3E5253928A526BB00FBA21C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3E5253C28A526BB00FBA21C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3E5253E28A526BB00FBA21C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3E5254E28A53EEE00FBA21C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		B3E5255028A641AF00FBA21C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		B3E5255528A645DC00FBA21C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		B3E5255728A646B300FBA21C /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		B3E5255A28A648C200FBA21C /* Endpointable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpointable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,9 @@
 		B3E5252F28A526B800FBA21C /* idus_Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				B3E5254928A53BF400FBA21C /* PresentationLayer */,
+				B3E5254C28A53C1B00FBA21C /* DomainLayer */,
+				B3E5254428A5338200FBA21C /* DataLayer */,
 				B3E5253028A526B800FBA21C /* AppDelegate.swift */,
 				B3E5253228A526B800FBA21C /* SceneDelegate.swift */,
 				B3E5253428A526B800FBA21C /* ViewController.swift */,
@@ -62,6 +75,88 @@
 				B3E5253E28A526BB00FBA21C /* Info.plist */,
 			);
 			path = idus_Assignment;
+			sourceTree = "<group>";
+		};
+		B3E5254428A5338200FBA21C /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				B3E5254628A5376F00FBA21C /* DTO */,
+				B3E5254528A533A700FBA21C /* Network */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		B3E5254528A533A700FBA21C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B3E5255328A6435A00FBA21C /* EndPoint */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B3E5254628A5376F00FBA21C /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		B3E5254928A53BF400FBA21C /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				B3E5254B28A53C0D00FBA21C /* ViewModel */,
+				B3E5254A28A53C0400FBA21C /* View */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		B3E5254A28A53C0400FBA21C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3E5254E28A53EEE00FBA21C /* SearchViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B3E5254B28A53C0D00FBA21C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B3E5255028A641AF00FBA21C /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B3E5254C28A53C1B00FBA21C /* DomainLayer */ = {
+			isa = PBXGroup;
+			children = (
+				B3E5255228A6423500FBA21C /* SearchUsecase */,
+			);
+			path = DomainLayer;
+			sourceTree = "<group>";
+		};
+		B3E5255228A6423500FBA21C /* SearchUsecase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SearchUsecase;
+			sourceTree = "<group>";
+		};
+		B3E5255328A6435A00FBA21C /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				B3E5255528A645DC00FBA21C /* Endpoint.swift */,
+				B3E5255728A646B300FBA21C /* HTTPMethod.swift */,
+				B3E5255428A6436D00FBA21C /* Protocol */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		B3E5255428A6436D00FBA21C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B3E5255A28A648C200FBA21C /* Endpointable.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +230,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3E5253528A526B800FBA21C /* ViewController.swift in Sources */,
+				B3E5255128A641AF00FBA21C /* SearchViewModel.swift in Sources */,
+				B3E5255B28A648C200FBA21C /* Endpointable.swift in Sources */,
+				B3E5255828A646B300FBA21C /* HTTPMethod.swift in Sources */,
 				B3E5253128A526B800FBA21C /* AppDelegate.swift in Sources */,
+				B3E5254F28A53EEE00FBA21C /* SearchViewController.swift in Sources */,
+				B3E5255628A645DC00FBA21C /* Endpoint.swift in Sources */,
 				B3E5253328A526B800FBA21C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
