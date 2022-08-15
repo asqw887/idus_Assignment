@@ -9,5 +9,10 @@ import Foundation
 
 final class DetailViewModel {
     
+    private var detailPageUsecase = DetailPageUsecase()
+    
+    func enquireAllData() {
+        
+    }
     
 }

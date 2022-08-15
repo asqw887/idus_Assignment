@@ -48,6 +48,11 @@ class TitleView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    //TODO: 외부에서 엔티티를 받아와 컴포넌트를 셋팅해주는 메소드
+    func set(){
+        
+    }
 }
 
 private extension TitleView {
@@ -74,11 +79,11 @@ private extension TitleView {
             nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
         ])
         
+        // openButton AutoLayout
         NSLayoutConstraint.activate([
             openButton.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             openButton.bottomAnchor.constraint(equalTo: imageView.bottomAnchor),
             openButton.widthAnchor.constraint(equalToConstant: 80)
-//            openButton.heightAnchor.constraint(equalToConstant: 20)
         ])
         
     }
