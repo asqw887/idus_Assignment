@@ -33,7 +33,8 @@ private extension SearchViewController {
         searchVM.isValidAppID.bind { isValid in
             if isValid {
                 DispatchQueue.main.async {
-                    let nextVC = DetailViewController()
+                    guard let id = self.navigationItem.searchController?.searchBar.text else { return }
+                    let nextVC = DetailViewController(appID: id)
                     self.navigationController?.pushViewController(nextVC, animated: true)
                 }
             }

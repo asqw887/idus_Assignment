@@ -27,6 +27,8 @@
 		B3E5257228AA2EB300FBA21C /* SearchAPPUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5257128AA2EB300FBA21C /* SearchAPPUsecase.swift */; };
 		B3E5257428AA4CE900FBA21C /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5257328AA4CE900FBA21C /* Observable.swift */; };
 		B3E5257C28AA585B00FBA21C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5257B28AA585B00FBA21C /* DetailViewController.swift */; };
+		B3E5257E28AA807F00FBA21C /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5257D28AA807F00FBA21C /* DetailViewModel.swift */; };
+		B3E5258028AA871300FBA21C /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5257F28AA871300FBA21C /* TitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		B3E5257128AA2EB300FBA21C /* SearchAPPUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPPUsecase.swift; sourceTree = "<group>"; };
 		B3E5257328AA4CE900FBA21C /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		B3E5257B28AA585B00FBA21C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B3E5257D28AA807F00FBA21C /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		B3E5257F28AA871300FBA21C /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				B3E5257B28AA585B00FBA21C /* DetailViewController.swift */,
+				B3E5257F28AA871300FBA21C /* TitleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 		B3E5257A28AA584C00FBA21C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B3E5257D28AA807F00FBA21C /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -330,6 +336,8 @@
 				B3E5257028AA2C0700FBA21C /* SearchRepository.swift in Sources */,
 				B3E5256428A6503100FBA21C /* NetworkServiceable.swift in Sources */,
 				B3E5255F28A64F1F00FBA21C /* NetworkService.swift in Sources */,
+				B3E5258028AA871300FBA21C /* TitleView.swift in Sources */,
+				B3E5257E28AA807F00FBA21C /* DetailViewModel.swift in Sources */,
 				B3E5253128A526B800FBA21C /* AppDelegate.swift in Sources */,
 				B3E5256D28AA2AA200FBA21C /* JSONConverter.swift in Sources */,
 				B3E5257C28AA585B00FBA21C /* DetailViewController.swift in Sources */,
