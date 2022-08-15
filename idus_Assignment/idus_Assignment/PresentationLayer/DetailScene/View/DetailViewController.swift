@@ -79,8 +79,8 @@ private extension DetailViewController {
         
         // titleView AutoLayout
         NSLayoutConstraint.activate([
-            titleView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            titleView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            titleView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            titleView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             titleView.heightAnchor.constraint(equalToConstant: 120)
         ])
         

@@ -13,6 +13,8 @@ class TitleView: UIView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 20
         //TODO: 임시 이미지 교체
         imageView.image = UIImage(systemName: "lightbulb.circle.fill")
         return imageView
@@ -22,8 +24,6 @@ class TitleView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 25)
-        //TODO: 임시 타이틀 교체
-        label.text = ""
         return label
     }()
     
