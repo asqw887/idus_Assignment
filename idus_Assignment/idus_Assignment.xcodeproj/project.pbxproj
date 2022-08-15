@@ -26,6 +26,7 @@
 		B3E5257028AA2C0700FBA21C /* SearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5256F28AA2C0700FBA21C /* SearchRepository.swift */; };
 		B3E5257228AA2EB300FBA21C /* SearchAPPUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5257128AA2EB300FBA21C /* SearchAPPUsecase.swift */; };
 		B3E5257428AA4CE900FBA21C /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5257328AA4CE900FBA21C /* Observable.swift */; };
+		B3E5257C28AA585B00FBA21C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5257B28AA585B00FBA21C /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		B3E5256F28AA2C0700FBA21C /* SearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepository.swift; sourceTree = "<group>"; };
 		B3E5257128AA2EB300FBA21C /* SearchAPPUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPPUsecase.swift; sourceTree = "<group>"; };
 		B3E5257328AA4CE900FBA21C /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		B3E5257B28AA585B00FBA21C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +129,8 @@
 		B3E5254928A53BF400FBA21C /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				B3E5254B28A53C0D00FBA21C /* ViewModel */,
-				B3E5254A28A53C0400FBA21C /* View */,
+				B3E5257528AA57F900FBA21C /* SearchScene */,
+				B3E5257728AA582800FBA21C /* DetailScene */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -218,6 +220,39 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		B3E5257528AA57F900FBA21C /* SearchScene */ = {
+			isa = PBXGroup;
+			children = (
+				B3E5254A28A53C0400FBA21C /* View */,
+				B3E5254B28A53C0D00FBA21C /* ViewModel */,
+			);
+			path = SearchScene;
+			sourceTree = "<group>";
+		};
+		B3E5257728AA582800FBA21C /* DetailScene */ = {
+			isa = PBXGroup;
+			children = (
+				B3E5257A28AA584C00FBA21C /* ViewModel */,
+				B3E5257928AA584900FBA21C /* View */,
+			);
+			path = DetailScene;
+			sourceTree = "<group>";
+		};
+		B3E5257928AA584900FBA21C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3E5257B28AA585B00FBA21C /* DetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B3E5257A28AA584C00FBA21C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -297,6 +332,7 @@
 				B3E5255F28A64F1F00FBA21C /* NetworkService.swift in Sources */,
 				B3E5253128A526B800FBA21C /* AppDelegate.swift in Sources */,
 				B3E5256D28AA2AA200FBA21C /* JSONConverter.swift in Sources */,
+				B3E5257C28AA585B00FBA21C /* DetailViewController.swift in Sources */,
 				B3E5256728A656CA00FBA21C /* DetailPageDTO.swift in Sources */,
 				B3E5254F28A53EEE00FBA21C /* SearchViewController.swift in Sources */,
 				B3E5256B28AA28C200FBA21C /* DefaultSearchAppRepository.swift in Sources */,

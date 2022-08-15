@@ -32,10 +32,18 @@ private extension SearchViewController {
     func bind() {
         searchVM.isValidAppID.bind { isValid in
             if isValid {
-                print("다음 화면으로 이동")
+                DispatchQueue.main.async {
+                    let nextVC = DetailViewController()
+                    self.navigationController?.pushViewController(nextVC, animated: true)
+                }
             }
             else {
-                print("뭔가 실패함.. ")
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "알림", message: "잘못된 APP ID 입니다.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "확인", style: .default))
+                    self.present(alert, animated: true)
+                }
+                
             }
         }
     }
@@ -44,8 +52,6 @@ private extension SearchViewController {
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        // ViewModel 한테 유효한지 아닌지 물어봐서 얼럿 띄우기 // 화면전환 로직 수행하기
-        // searchBar.text
         searchVM.searchAppID(with: searchBar.text ?? "")
     }
     
