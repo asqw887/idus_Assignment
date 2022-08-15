@@ -10,9 +10,12 @@ import Foundation
 final class DetailViewModel {
     
     private var detailPageUsecase = DetailPageUsecase()
+    var detaPageData: Observable<DetailPageEntity?> = Observable(nil)
     
-    func enquireAllData() {
-        
+    func enquireAllData(with appID: String) {
+        detailPageUsecase.execute(with: appID) { [weak self] detailPageEntity in
+            self?.detaPageData.updateValue(value: detailPageEntity)
+        }
     }
     
 }

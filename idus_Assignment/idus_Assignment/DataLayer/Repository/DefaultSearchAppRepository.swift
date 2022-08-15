@@ -5,7 +5,7 @@
 //  Created by 최예주 on 2022/08/15.
 //
 
-import Foundation
+import UIKit
 
 final class DefaultSearchAppRepository: SearchRepository {
         
@@ -24,4 +24,22 @@ final class DefaultSearchAppRepository: SearchRepository {
             }
         }
     }
+    
+    func fetchImage(with url: URL?, completion: @escaping (UIImage?) -> Void) {
+        guard let url = url else {
+            print(NetworkError.noURL)
+            return
+        }
+
+        networkService.requestImage(url: url) { result in
+            switch result {
+            case .success(let data):
+                let image = UIImage(data: data)
+                completion(image)
+            case .failure:
+                print(NetworkError.noData)
+            }
+        }
+    }
+    
 }

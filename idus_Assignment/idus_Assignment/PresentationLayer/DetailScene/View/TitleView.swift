@@ -23,7 +23,7 @@ class TitleView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 25)
         //TODO: 임시 타이틀 교체
-        label.text = "아이디어스(idus)"
+        label.text = ""
         return label
     }()
     
@@ -50,8 +50,11 @@ class TitleView: UIView {
     }
     
     //TODO: 외부에서 엔티티를 받아와 컴포넌트를 셋팅해주는 메소드
-    func set(){
-        
+    func set(entity: HeaderEntity){
+        DispatchQueue.main.async {
+            self.nameLabel.text = entity.appName
+            self.imageView.image = entity.image
+        }
     }
 }
 

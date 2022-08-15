@@ -33,20 +33,26 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
         configureLayout()
+        bind()
 
     }
 
     convenience init(appID: String){
         self.init()
-        print(appID)
-        
-        // detailVM.enquireAllData()
+        detailVM.enquireAllData(with: appID)
     }
     
 
 }
 
 private extension DetailViewController {
+    
+    func bind(){
+        detailVM.detaPageData.bind { [weak self] detailPageEntity in
+            guard let header = detailPageEntity?.header else { return }
+            self?.titleView.set(entity: header)
+        }
+    }
     
     func configureLayout(){
         view.addSubview(scrollView)
@@ -77,9 +83,6 @@ private extension DetailViewController {
             titleView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             titleView.heightAnchor.constraint(equalToConstant: 120)
         ])
-        
-        
-        
         
     }
 }

@@ -17,8 +17,11 @@ final class DetailPageUsecase {
             
             guard let detailPageDTO = appSearchDTO.results.first else { print(NetworkError.noData)
                 return }
-            guard let entity = self?.convertToEntity(from: detailPageDTO) else { return }
-            completion(entity)
+            
+            self?.convertToEntity(from: detailPageDTO, completion: { entity in
+                completion(entity)
+            })
+            
         }
     }
     
@@ -27,12 +30,28 @@ final class DetailPageUsecase {
 
 private extension DetailPageUsecase {
     
-    func convertToEntity(from dto: DetailPageDTO) -> DetailPageEntity {
-        return DetailPageEntity(header: convertToHeaderEntity(from: dto))
+    func convertToEntity(from dto: DetailPageDTO, completion: @escaping (DetailPageEntity) -> Void) {
+        
+        DispatchQueue.global().async { [weak self] in
+            var entity = DetailPageEntity()
+            
+            self?.convertToHeaderEntity(from: dto) { headerEntity in
+                entity.header = headerEntity
+                completion(entity)
+            }
+        }
+        
     }
     
-    func convertToHeaderEntity(from dto: DetailPageDTO) -> HeaderEntity {
-        return HeaderEntity(image: URL(string: dto.artworkUrl512)!, appName: dto.trackCensoredName)
+    func convertToHeaderEntity(from dto: DetailPageDTO, completion: @escaping (HeaderEntity) -> Void) {
+        let url = URL(string: dto.artworkUrl512)
+        searchRepository.fetchImage(with: url) { image in
+            guard let image = image else {
+                return
+            }
+            completion(HeaderEntity(image: image, appName: dto.trackCensoredName))
+        }
+        
     }
     
 }

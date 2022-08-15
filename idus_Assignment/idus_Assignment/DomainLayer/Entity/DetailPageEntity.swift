@@ -8,5 +8,5 @@
 import Foundation
 
 struct DetailPageEntity {
-    let header: HeaderEntity
+    var header: HeaderEntity?
 }
