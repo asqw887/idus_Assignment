@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol DetailPageRepository {
-    func requestDetailPage(appID: String, completion: @escaping (Bool) -> Void)
+protocol SearchRepository {
+    func requestIsValidAppID(appID: String, completion: @escaping (APPSearchDTO) -> Void)
 }

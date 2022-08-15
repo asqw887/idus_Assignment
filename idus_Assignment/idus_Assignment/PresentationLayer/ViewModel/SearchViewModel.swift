@@ -9,7 +9,13 @@ import Foundation
 
 final class SearchViewModel {
     
+    var isValidAppID: Observable<Bool> = Observable(false)
+    
+    private var searchUsecase = SearchAPPUsecase()
+    
     func searchAppID(with appID: String){
-        // Notification으로 알리기? 
+        searchUsecase.execute(with: appID) { [weak self] isValid in
+            self?.isValidAppID.updateValue(value: isValid)
+        }
     }
 }

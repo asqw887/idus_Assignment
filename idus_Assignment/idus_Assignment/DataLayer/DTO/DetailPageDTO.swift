@@ -25,7 +25,7 @@ struct DetailPageDTO: Codable {
     let userRatingCountForCurrentVersion: Int
     let trackViewURL: String
     let trackContentRating: String
-    let currentVersionReleaseDate: Date
+    let currentVersionReleaseDate: String
     let releaseNotes, resultDescription: String
     let genreIDS: [String]
     let releaseDate: String
