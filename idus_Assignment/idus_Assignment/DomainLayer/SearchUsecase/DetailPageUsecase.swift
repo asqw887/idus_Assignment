@@ -34,8 +34,9 @@ private extension DetailPageUsecase {
         
         var entity = DetailPageEntity()
         
-        convertToHeaderEntity(from: dto) { headerEntity in
+        convertToHeaderEntity(from: dto) { [weak self] headerEntity in
             entity.header = headerEntity
+            entity.subInfo = self?.convertToSubInfoEntity(from: dto)
             completion(entity)
         }
         

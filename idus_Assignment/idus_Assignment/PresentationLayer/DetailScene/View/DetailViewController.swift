@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     private var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.isScrollEnabled = true
         return scrollView
     }()
     
@@ -33,9 +34,12 @@ class DetailViewController: UIViewController {
     private lazy var subInfoCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        layout.itemSize = CGSize(width: 90, height: 90)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout) 
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(SubInfoCell.self, forCellWithReuseIdentifier: SubInfoCell.reuseIdentifier)
+        collectionView.dataSource = self.subInfoDataSource
+        collectionView.isScrollEnabled = true
         return collectionView
     }()
     
@@ -61,23 +65,20 @@ private extension DetailViewController {
         detailVM.detaPageData.bind { [weak self] detailPageEntity in
             guard let header = detailPageEntity?.header, let subInfo = detailPageEntity?.subInfo else { return }
             self?.titleView.set(entity: header)
+            self?.subInfoDataSource = SubInfoDataSource(entity: subInfo)
             
-            self?.subInfoDataSource = SubInfoDataSource(entity: subInfo, didLoadData: {
-                DispatchQueue.main.async {
-                    self?.subInfoCollectionView.reloadData()
-                }
-            })
+            DispatchQueue.main.async {
+                self?.subInfoCollectionView.dataSource = self?.subInfoDataSource
+                self?.subInfoCollectionView.reloadData()
+            }
         }
-    }
-    
-    private func setDataSource() {
-        
     }
     
     func configureLayout(){
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubview(titleView)
+        contentView.addSubview(subInfoCollectionView)
         
         
         // ScrollView AutoLayout
@@ -109,7 +110,7 @@ private extension DetailViewController {
             subInfoCollectionView.topAnchor.constraint(equalTo: titleView.bottomAnchor, constant: 10),
             subInfoCollectionView.leadingAnchor.constraint(equalTo: titleView.leadingAnchor),
             subInfoCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            titleView.heightAnchor.constraint(equalToConstant: 60)
+            subInfoCollectionView.heightAnchor.constraint(equalToConstant: 110)
         ])
     }
 }

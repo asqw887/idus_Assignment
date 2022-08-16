@@ -15,9 +15,9 @@ class SubInfoCell: UICollectionViewCell {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fill
         stackView.alignment = .center
-
+        stackView.spacing = 5
         return stackView
     }()
     
@@ -56,6 +56,7 @@ class SubInfoCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = .systemBackground
+        
     }
 
     @available (*, unavailable)
@@ -69,11 +70,10 @@ class SubInfoCell: UICollectionViewCell {
         footerLabel.text = entity.footer
         guard let content = entity.content else {
             contentImageView.image = UIImage(systemName: "person.crop.square")
-            configureLayout(isShowImage: false)
+            configureLayout(isShowImage: true)
             return }
         contentLabel.text = content
-        configureLayout(isShowImage: true)
-        
+        configureLayout(isShowImage: false)
     }
 
 }
@@ -81,6 +81,8 @@ class SubInfoCell: UICollectionViewCell {
 private extension SubInfoCell {
     
     func configureLayout(isShowImage: Bool) {
+        
+        self.addSubview(stackView)
         
         stackView.addArrangedSubview(titleLabel)
         if isShowImage {
@@ -90,13 +92,12 @@ private extension SubInfoCell {
         }
         stackView.addArrangedSubview(footerLabel)
         
-        
-        
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            stackView.widthAnchor.constraint(equalTo: contentView.widthAnchor)
         ])
     }
 }

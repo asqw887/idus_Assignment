@@ -9,13 +9,10 @@ import UIKit
 
 class SubInfoDataSource: NSObject, UICollectionViewDataSource {
     
-    private var didLoadData: () -> Void
-    var subInfoEntity: [SubInfoEntity]
+    var subInfoEntity: [SubInfoEntity] = [SubInfoEntity]()
     
-    init(entity: [SubInfoEntity], didLoadData: @escaping () -> Void) {
-        self.didLoadData = didLoadData
+    init(entity: [SubInfoEntity]) {
         subInfoEntity = entity
-        super.init()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
