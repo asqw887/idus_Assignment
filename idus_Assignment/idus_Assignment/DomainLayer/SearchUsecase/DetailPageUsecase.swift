@@ -39,6 +39,7 @@ private extension DetailPageUsecase {
             entity.subInfo = self?.convertToSubInfoEntity(from: dto)
             entity.releaseNote = self?.convertToReleaseNoteEntity(from: dto)
             entity.description = self?.convertToDescriptionEntity(from: dto)
+            entity.information = self?.convertToInformationEntity(from: dto)
             self?.convertToPreviewEntity(from: dto) { previewEntity in
                 entity.preview = previewEntity
                 completion(entity)
@@ -106,6 +107,22 @@ private extension DetailPageUsecase {
     // DescriptionEntity 변환
     func convertToDescriptionEntity(from dto: DetailPageDTO) -> DescriptionEntity {
         return DescriptionEntity(description: dto.resultDescription, developerName: dto.sellerName)
+    }
+    
+    // InformationEntity 변환
+    func convertToInformationEntity(from dto: DetailPageDTO) -> [InformationEntity] {
+        
+        var infoEntities = [InformationEntity]()
+        infoEntities.append(InformationEntity(title: "제공자", content: dto.sellerName))
+        let megaByteSize = round(Double(dto.fileSizeBytes)! / 1024000 * 10 ) / 10
+        infoEntities.append(InformationEntity(title: "크기", content: "\(megaByteSize)MB" ))
+        infoEntities.append(InformationEntity(title: "카테고리", content: dto.primaryGenreName))
+        // TODO: 변경해야함
+        infoEntities.append(InformationEntity(title: "언어", content: dto.languageCodesISO2A.first!))
+        infoEntities.append(InformationEntity(title: "연령등급", content: dto.contentAdvisoryRating))
+        infoEntities.append(InformationEntity(title: "저작권", content: dto.sellerName))
+        
+        return infoEntities
     }
 
 }

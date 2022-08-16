@@ -37,13 +37,16 @@
 		B3E5258D28AB36CE00FBA21C /* SubInfoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5258C28AB36CE00FBA21C /* SubInfoDataSource.swift */; };
 		B3E5258F28AB6CEC00FBA21C /* ReleaseNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5258E28AB6CEC00FBA21C /* ReleaseNoteView.swift */; };
 		B3E5259128AB735000FBA21C /* ReleaseNoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5259028AB735000FBA21C /* ReleaseNoteEntity.swift */; };
-		B3E5259328AB7DFC00FBA21C /* UIScrollView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5259228AB7DFC00FBA21C /* UIScrollView +.swift */; };
 		B3E5259528AB821000FBA21C /* PreviewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5259428AB821000FBA21C /* PreviewEntity.swift */; };
 		B3E5259928AB873C00FBA21C /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5259828AB873C00FBA21C /* PreviewCell.swift */; };
 		B3E5259B28AB88AC00FBA21C /* PreviewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5259A28AB88AC00FBA21C /* PreviewDataSource.swift */; };
 		B3E5259D28AB978900FBA21C /* ScreenShotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5259C28AB978900FBA21C /* ScreenShotViewController.swift */; };
 		B3E5259F28ABCBBB00FBA21C /* DescriptionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5259E28ABCBBB00FBA21C /* DescriptionEntity.swift */; };
 		B3E525A128ABCCF400FBA21C /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E525A028ABCCF400FBA21C /* DescriptionView.swift */; };
+		B3E525A328ABD64100FBA21C /* InformationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E525A228ABD64100FBA21C /* InformationEntity.swift */; };
+		B3E525A528ABDE9A00FBA21C /* InformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E525A428ABDE9900FBA21C /* InformationCell.swift */; };
+		B3E525A728ABE0B300FBA21C /* InformationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E525A628ABE0B300FBA21C /* InformationDataSource.swift */; };
+		B3E525A928AC098C00FBA21C /* UITableView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E525A828AC098B00FBA21C /* UITableView +.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,13 +82,16 @@
 		B3E5258C28AB36CE00FBA21C /* SubInfoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubInfoDataSource.swift; sourceTree = "<group>"; };
 		B3E5258E28AB6CEC00FBA21C /* ReleaseNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseNoteView.swift; sourceTree = "<group>"; };
 		B3E5259028AB735000FBA21C /* ReleaseNoteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseNoteEntity.swift; sourceTree = "<group>"; };
-		B3E5259228AB7DFC00FBA21C /* UIScrollView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView +.swift"; sourceTree = "<group>"; };
 		B3E5259428AB821000FBA21C /* PreviewEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewEntity.swift; sourceTree = "<group>"; };
 		B3E5259828AB873C00FBA21C /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
 		B3E5259A28AB88AC00FBA21C /* PreviewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDataSource.swift; sourceTree = "<group>"; };
 		B3E5259C28AB978900FBA21C /* ScreenShotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShotViewController.swift; sourceTree = "<group>"; };
 		B3E5259E28ABCBBB00FBA21C /* DescriptionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionEntity.swift; sourceTree = "<group>"; };
 		B3E525A028ABCCF400FBA21C /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
+		B3E525A228ABD64100FBA21C /* InformationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationEntity.swift; sourceTree = "<group>"; };
+		B3E525A428ABDE9900FBA21C /* InformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCell.swift; sourceTree = "<group>"; };
+		B3E525A628ABE0B300FBA21C /* InformationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDataSource.swift; sourceTree = "<group>"; };
+		B3E525A828AC098B00FBA21C /* UITableView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView +.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +134,7 @@
 				B3E5253E28A526BB00FBA21C /* Info.plist */,
 				B3E5256C28AA2AA200FBA21C /* JSONConverter.swift */,
 				B3E5257328AA4CE900FBA21C /* Observable.swift */,
-				B3E5259228AB7DFC00FBA21C /* UIScrollView +.swift */,
+				B3E525A828AC098B00FBA21C /* UITableView +.swift */,
 			);
 			path = idus_Assignment;
 			sourceTree = "<group>";
@@ -279,14 +285,16 @@
 			isa = PBXGroup;
 			children = (
 				B3E5257B28AA585B00FBA21C /* DetailViewController.swift */,
-				B3E5258E28AB6CEC00FBA21C /* ReleaseNoteView.swift */,
 				B3E5257F28AA871300FBA21C /* TitleView.swift */,
+				B3E5258E28AB6CEC00FBA21C /* ReleaseNoteView.swift */,
 				B3E5258C28AB36CE00FBA21C /* SubInfoDataSource.swift */,
 				B3E5258A28AB2CF100FBA21C /* SubInfoCell.swift */,
 				B3E5259A28AB88AC00FBA21C /* PreviewDataSource.swift */,
 				B3E5259828AB873C00FBA21C /* PreviewCell.swift */,
 				B3E5259C28AB978900FBA21C /* ScreenShotViewController.swift */,
 				B3E525A028ABCCF400FBA21C /* DescriptionView.swift */,
+				B3E525A428ABDE9900FBA21C /* InformationCell.swift */,
+				B3E525A628ABE0B300FBA21C /* InformationDataSource.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -308,6 +316,7 @@
 				B3E5259028AB735000FBA21C /* ReleaseNoteEntity.swift */,
 				B3E5259428AB821000FBA21C /* PreviewEntity.swift */,
 				B3E5259E28ABCBBB00FBA21C /* DescriptionEntity.swift */,
+				B3E525A228ABD64100FBA21C /* InformationEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -382,8 +391,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E5259328AB7DFC00FBA21C /* UIScrollView +.swift in Sources */,
 				B3E5259928AB873C00FBA21C /* PreviewCell.swift in Sources */,
+				B3E525A328ABD64100FBA21C /* InformationEntity.swift in Sources */,
 				B3E5255128A641AF00FBA21C /* SearchViewModel.swift in Sources */,
 				B3E5258B28AB2CF100FBA21C /* SubInfoCell.swift in Sources */,
 				B3E5257228AA2EB300FBA21C /* SearchAPPUsecase.swift in Sources */,
@@ -392,9 +401,11 @@
 				B3E5255828A646B300FBA21C /* HTTPMethod.swift in Sources */,
 				B3E5259528AB821000FBA21C /* PreviewEntity.swift in Sources */,
 				B3E5257028AA2C0700FBA21C /* SearchRepository.swift in Sources */,
+				B3E525A728ABE0B300FBA21C /* InformationDataSource.swift in Sources */,
 				B3E5256428A6503100FBA21C /* NetworkServiceable.swift in Sources */,
 				B3E5255F28A64F1F00FBA21C /* NetworkService.swift in Sources */,
 				B3E5258028AA871300FBA21C /* TitleView.swift in Sources */,
+				B3E525A928AC098C00FBA21C /* UITableView +.swift in Sources */,
 				B3E5258928AB2BFC00FBA21C /* SubInfoEntity.swift in Sources */,
 				B3E5258228AAC48800FBA21C /* DetailPageUsecase.swift in Sources */,
 				B3E5257E28AA807F00FBA21C /* DetailViewModel.swift in Sources */,
@@ -412,6 +423,7 @@
 				B3E5259F28ABCBBB00FBA21C /* DescriptionEntity.swift in Sources */,
 				B3E5253328A526B800FBA21C /* SceneDelegate.swift in Sources */,
 				B3E525A128ABCCF400FBA21C /* DescriptionView.swift in Sources */,
+				B3E525A528ABDE9A00FBA21C /* InformationCell.swift in Sources */,
 				B3E5256128A64F5700FBA21C /* NetworkError.swift in Sources */,
 				B3E5258728AAC9EA00FBA21C /* HeaderEntity.swift in Sources */,
 				B3E5259128AB735000FBA21C /* ReleaseNoteEntity.swift in Sources */,

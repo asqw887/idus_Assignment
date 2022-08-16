@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
     private var detailVM = DetailViewModel()
     private var subInfoDataSource: SubInfoDataSource?
     private var previewDataSource: PreviewDataSource?
+    private var informationDataSource: InformationDataSource?
     
     private var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -68,6 +69,14 @@ class DetailViewController: UIViewController {
         return view
     }()
     
+    private lazy var informationTableView: DynamicSizeTableView = {
+        let tableview = DynamicSizeTableView()
+        tableview.translatesAutoresizingMaskIntoConstraints = false
+        tableview.register(InformationCell.self, forCellReuseIdentifier: InformationCell.reuseIdentifier)
+        tableview.dataSource = self.informationDataSource
+        return tableview
+    }()
+    
     // MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,18 +96,22 @@ private extension DetailViewController {
     
     func bind(){
         detailVM.detaPageData.bind { [weak self] detailPageEntity in
-            guard let header = detailPageEntity?.header, let subInfo = detailPageEntity?.subInfo, let releaseNote = detailPageEntity?.releaseNote, let preview = detailPageEntity?.preview, let description = detailPageEntity?.description else { return }
+            guard let header = detailPageEntity?.header, let subInfo = detailPageEntity?.subInfo, let releaseNote = detailPageEntity?.releaseNote, let preview = detailPageEntity?.preview, let description = detailPageEntity?.description, let info = detailPageEntity?.information else { return }
             self?.titleView.set(entity: header)
             self?.subInfoDataSource = SubInfoDataSource(entity: subInfo)
             self?.releaseNoteView.set(entity: releaseNote)
             self?.previewDataSource = PreviewDataSource(entity: preview)
             self?.descriptionView.set(entity: description)
+            self?.informationDataSource = InformationDataSource(entity: info)
             
             DispatchQueue.main.async {
                 self?.subInfoCollectionView.dataSource = self?.subInfoDataSource
                 self?.subInfoCollectionView.reloadData()
                 self?.previewCollectionView.dataSource = self?.previewDataSource
                 self?.previewCollectionView.reloadData()
+                self?.informationTableView.dataSource = self?.informationDataSource
+                self?.informationTableView.reloadData()
+                self?.informationTableView.invalidateIntrinsicContentSize()
             }
         }
     }
@@ -111,6 +124,7 @@ private extension DetailViewController {
         contentView.addSubview(releaseNoteView)
         contentView.addSubview(previewCollectionView)
         contentView.addSubview(descriptionView)
+        contentView.addSubview(informationTableView)
         
         
         // ScrollView AutoLayout
@@ -134,6 +148,7 @@ private extension DetailViewController {
         NSLayoutConstraint.activate([
             titleView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             titleView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            titleView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             titleView.heightAnchor.constraint(equalToConstant: 120)
         ])
         
@@ -149,8 +164,7 @@ private extension DetailViewController {
         NSLayoutConstraint.activate([
             releaseNoteView.topAnchor.constraint(equalTo: subInfoCollectionView.bottomAnchor, constant: 10),
             releaseNoteView.leadingAnchor.constraint(equalTo: subInfoCollectionView.leadingAnchor),
-            releaseNoteView.trailingAnchor.constraint(equalTo: subInfoCollectionView.trailingAnchor),
-            releaseNoteView.heightAnchor.constraint(equalToConstant: 110),
+            releaseNoteView.trailingAnchor.constraint(equalTo: subInfoCollectionView.trailingAnchor)
         ])
         
         
@@ -159,21 +173,28 @@ private extension DetailViewController {
             previewCollectionView.topAnchor.constraint(equalTo: releaseNoteView.bottomAnchor, constant: 20),
             previewCollectionView.leadingAnchor.constraint(equalTo: releaseNoteView.leadingAnchor),
             previewCollectionView.trailingAnchor.constraint(equalTo: releaseNoteView.trailingAnchor),
-            previewCollectionView.heightAnchor.constraint(equalToConstant: 696 * 0.7),
-//            previewCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            previewCollectionView.heightAnchor.constraint(equalToConstant: 696 * 0.7)
         ])
-        
         
         // descriptionView AutoLayout
         NSLayoutConstraint.activate([
             descriptionView.topAnchor.constraint(equalTo: previewCollectionView.bottomAnchor, constant: 20),
             descriptionView.leadingAnchor.constraint(equalTo: previewCollectionView.leadingAnchor),
             descriptionView.trailingAnchor.constraint(equalTo: previewCollectionView.trailingAnchor),
-            descriptionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
+        
+        // informationTableView AutoLayout
+        NSLayoutConstraint.activate([
+            informationTableView.topAnchor.constraint(equalTo: descriptionView.bottomAnchor, constant: 20),
+            informationTableView.leadingAnchor.constraint(equalTo: descriptionView.leadingAnchor),
+            informationTableView.trailingAnchor.constraint(equalTo: descriptionView.trailingAnchor),
+            informationTableView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
         ])
     }
 }
 
+
+// MARK: ScreenShotCollectionView Delegate
 extension DetailViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
