@@ -30,7 +30,6 @@ final class DefaultSearchAppRepository: SearchRepository {
             print(NetworkError.noURL)
             return
         }
-
         networkService.requestImage(url: url) { result in
             switch result {
             case .success(let data):
@@ -41,5 +40,7 @@ final class DefaultSearchAppRepository: SearchRepository {
             }
         }
     }
+    
+    
     
 }

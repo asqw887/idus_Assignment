@@ -38,6 +38,9 @@
 		B3E5258F28AB6CEC00FBA21C /* ReleaseNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5258E28AB6CEC00FBA21C /* ReleaseNoteView.swift */; };
 		B3E5259128AB735000FBA21C /* ReleaseNoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5259028AB735000FBA21C /* ReleaseNoteEntity.swift */; };
 		B3E5259328AB7DFC00FBA21C /* UIScrollView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5259228AB7DFC00FBA21C /* UIScrollView +.swift */; };
+		B3E5259528AB821000FBA21C /* PreviewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5259428AB821000FBA21C /* PreviewEntity.swift */; };
+		B3E5259928AB873C00FBA21C /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5259828AB873C00FBA21C /* PreviewCell.swift */; };
+		B3E5259B28AB88AC00FBA21C /* PreviewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5259A28AB88AC00FBA21C /* PreviewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +77,9 @@
 		B3E5258E28AB6CEC00FBA21C /* ReleaseNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseNoteView.swift; sourceTree = "<group>"; };
 		B3E5259028AB735000FBA21C /* ReleaseNoteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseNoteEntity.swift; sourceTree = "<group>"; };
 		B3E5259228AB7DFC00FBA21C /* UIScrollView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView +.swift"; sourceTree = "<group>"; };
+		B3E5259428AB821000FBA21C /* PreviewEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewEntity.swift; sourceTree = "<group>"; };
+		B3E5259828AB873C00FBA21C /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
+		B3E5259A28AB88AC00FBA21C /* PreviewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,8 +275,10 @@
 				B3E5257B28AA585B00FBA21C /* DetailViewController.swift */,
 				B3E5258E28AB6CEC00FBA21C /* ReleaseNoteView.swift */,
 				B3E5257F28AA871300FBA21C /* TitleView.swift */,
-				B3E5258A28AB2CF100FBA21C /* SubInfoCell.swift */,
 				B3E5258C28AB36CE00FBA21C /* SubInfoDataSource.swift */,
+				B3E5258A28AB2CF100FBA21C /* SubInfoCell.swift */,
+				B3E5259A28AB88AC00FBA21C /* PreviewDataSource.swift */,
+				B3E5259828AB873C00FBA21C /* PreviewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -290,6 +298,7 @@
 				B3E5258628AAC9EA00FBA21C /* HeaderEntity.swift */,
 				B3E5258828AB2BFC00FBA21C /* SubInfoEntity.swift */,
 				B3E5259028AB735000FBA21C /* ReleaseNoteEntity.swift */,
+				B3E5259428AB821000FBA21C /* PreviewEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -365,12 +374,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3E5259328AB7DFC00FBA21C /* UIScrollView +.swift in Sources */,
+				B3E5259928AB873C00FBA21C /* PreviewCell.swift in Sources */,
 				B3E5255128A641AF00FBA21C /* SearchViewModel.swift in Sources */,
 				B3E5258B28AB2CF100FBA21C /* SubInfoCell.swift in Sources */,
 				B3E5257228AA2EB300FBA21C /* SearchAPPUsecase.swift in Sources */,
 				B3E5258528AAC97A00FBA21C /* DetailPageEntity.swift in Sources */,
 				B3E5255B28A648C200FBA21C /* Endpointable.swift in Sources */,
 				B3E5255828A646B300FBA21C /* HTTPMethod.swift in Sources */,
+				B3E5259528AB821000FBA21C /* PreviewEntity.swift in Sources */,
 				B3E5257028AA2C0700FBA21C /* SearchRepository.swift in Sources */,
 				B3E5256428A6503100FBA21C /* NetworkServiceable.swift in Sources */,
 				B3E5255F28A64F1F00FBA21C /* NetworkService.swift in Sources */,
@@ -393,6 +404,7 @@
 				B3E5258728AAC9EA00FBA21C /* HeaderEntity.swift in Sources */,
 				B3E5259128AB735000FBA21C /* ReleaseNoteEntity.swift in Sources */,
 				B3E5256928A6571D00FBA21C /* APPSearchDTO.swift in Sources */,
+				B3E5259B28AB88AC00FBA21C /* PreviewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

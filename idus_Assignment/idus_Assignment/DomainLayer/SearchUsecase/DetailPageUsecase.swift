@@ -21,7 +21,6 @@ final class DetailPageUsecase {
             self?.convertToEntity(from: detailPageDTO, completion: { entity in
                 completion(entity)
             })
-            
         }
     }
     
@@ -34,16 +33,22 @@ private extension DetailPageUsecase {
         
         var entity = DetailPageEntity()
         
+        // DTO -> Entity
         convertToHeaderEntity(from: dto) { [weak self] headerEntity in
             entity.header = headerEntity
             entity.subInfo = self?.convertToSubInfoEntity(from: dto)
             entity.releaseNote = self?.convertToReleaseNoteEntity(from: dto)
-            completion(entity)
+            self?.convertToPreviewEntity(from: dto) { previewEntity in
+                entity.preview = previewEntity
+                completion(entity)
+            }
         }
         
         
     }
     
+    // DetailPageEntity 하위 Entity 변환
+    // HeaderEntity 변환
     func convertToHeaderEntity(from dto: DetailPageDTO, completion: @escaping (HeaderEntity) -> Void) {
         let url = URL(string: dto.artworkUrl512)
         searchRepository.fetchImage(with: url) { image in
@@ -54,6 +59,7 @@ private extension DetailPageUsecase {
         }
     }
     
+    // SubInfoEntity 변환
     func convertToSubInfoEntity(from dto: DetailPageDTO) -> [SubInfoEntity] {
         var subInfoEntites = [SubInfoEntity]()
         
@@ -68,10 +74,32 @@ private extension DetailPageUsecase {
         return subInfoEntites
     }
     
+    // ReleaseNoteEntity 변환
     func convertToReleaseNoteEntity(from dto: DetailPageDTO) -> ReleaseNoteEntity {
         let versionStr = "버전 \(dto.version)"
         //TODO: N일전으로 변경하는 로직 추가하기
         return ReleaseNoteEntity(version: versionStr, releaseDate: "3일전", releaseNote: dto.releaseNotes)
+    }
+    
+    
+    // PreviewEntity 변환
+    func convertToPreviewEntity(from dto: DetailPageDTO, completion: @escaping ([PreviewEntity]) -> Void) {
+        
+        var previewEntites = [PreviewEntity]()
+        
+        dto.screenshotUrls.forEach { urlString in
+            let url = URL(string: urlString)
+            searchRepository.fetchImage(with: url) { image in
+                guard let image = image else {
+                    return
+                }
+                previewEntites.append(PreviewEntity(image: image))
+                
+                if dto.screenshotUrls.count == previewEntites.count {
+                    completion(previewEntites)
+                }
+            }
+        }
     }
 
 }
