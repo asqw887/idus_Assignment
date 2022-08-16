@@ -12,4 +12,5 @@ struct DetailPageEntity {
     var subInfo: [SubInfoEntity]?
     var releaseNote: ReleaseNoteEntity?
     var preview: [PreviewEntity]?
+    var description: DescriptionEntity?
 }

@@ -62,6 +62,12 @@ class DetailViewController: UIViewController {
         return collectionView
     }()
     
+    private var descriptionView: DescriptionView = {
+        let view = DescriptionView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     // MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,11 +87,12 @@ private extension DetailViewController {
     
     func bind(){
         detailVM.detaPageData.bind { [weak self] detailPageEntity in
-            guard let header = detailPageEntity?.header, let subInfo = detailPageEntity?.subInfo, let releaseNote = detailPageEntity?.releaseNote, let preview = detailPageEntity?.preview else { return }
+            guard let header = detailPageEntity?.header, let subInfo = detailPageEntity?.subInfo, let releaseNote = detailPageEntity?.releaseNote, let preview = detailPageEntity?.preview, let description = detailPageEntity?.description else { return }
             self?.titleView.set(entity: header)
             self?.subInfoDataSource = SubInfoDataSource(entity: subInfo)
             self?.releaseNoteView.set(entity: releaseNote)
             self?.previewDataSource = PreviewDataSource(entity: preview)
+            self?.descriptionView.set(entity: description)
             
             DispatchQueue.main.async {
                 self?.subInfoCollectionView.dataSource = self?.subInfoDataSource
@@ -103,6 +110,7 @@ private extension DetailViewController {
         contentView.addSubview(subInfoCollectionView)
         contentView.addSubview(releaseNoteView)
         contentView.addSubview(previewCollectionView)
+        contentView.addSubview(descriptionView)
         
         
         // ScrollView AutoLayout
@@ -152,7 +160,16 @@ private extension DetailViewController {
             previewCollectionView.leadingAnchor.constraint(equalTo: releaseNoteView.leadingAnchor),
             previewCollectionView.trailingAnchor.constraint(equalTo: releaseNoteView.trailingAnchor),
             previewCollectionView.heightAnchor.constraint(equalToConstant: 696 * 0.7),
-            previewCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+//            previewCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
+        
+        
+        // descriptionView AutoLayout
+        NSLayoutConstraint.activate([
+            descriptionView.topAnchor.constraint(equalTo: previewCollectionView.bottomAnchor, constant: 20),
+            descriptionView.leadingAnchor.constraint(equalTo: previewCollectionView.leadingAnchor),
+            descriptionView.trailingAnchor.constraint(equalTo: previewCollectionView.trailingAnchor),
+            descriptionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
 }
@@ -163,11 +180,11 @@ extension DetailViewController: UICollectionViewDelegate, UICollectionViewDelega
         return CGSize(width: 392 * 0.7, height: 696 * 0.7)
     }
     
+    // 셀 터치시 스크린샷 크게 볼수 있는 화면 제공
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? PreviewCell else { return }
         guard let image = cell.imageView.image else { return }
         let screenShotVC = ScreenShotViewController()
-//        screenShotVC.modalPresentationStyle = .fullScreen
         screenShotVC.set(image: image)
         self.present(screenShotVC, animated: true)
     }

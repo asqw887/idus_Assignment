@@ -42,6 +42,8 @@
 		B3E5259928AB873C00FBA21C /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5259828AB873C00FBA21C /* PreviewCell.swift */; };
 		B3E5259B28AB88AC00FBA21C /* PreviewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5259A28AB88AC00FBA21C /* PreviewDataSource.swift */; };
 		B3E5259D28AB978900FBA21C /* ScreenShotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5259C28AB978900FBA21C /* ScreenShotViewController.swift */; };
+		B3E5259F28ABCBBB00FBA21C /* DescriptionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5259E28ABCBBB00FBA21C /* DescriptionEntity.swift */; };
+		B3E525A128ABCCF400FBA21C /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E525A028ABCCF400FBA21C /* DescriptionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		B3E5259828AB873C00FBA21C /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
 		B3E5259A28AB88AC00FBA21C /* PreviewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDataSource.swift; sourceTree = "<group>"; };
 		B3E5259C28AB978900FBA21C /* ScreenShotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShotViewController.swift; sourceTree = "<group>"; };
+		B3E5259E28ABCBBB00FBA21C /* DescriptionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionEntity.swift; sourceTree = "<group>"; };
+		B3E525A028ABCCF400FBA21C /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +286,7 @@
 				B3E5259A28AB88AC00FBA21C /* PreviewDataSource.swift */,
 				B3E5259828AB873C00FBA21C /* PreviewCell.swift */,
 				B3E5259C28AB978900FBA21C /* ScreenShotViewController.swift */,
+				B3E525A028ABCCF400FBA21C /* DescriptionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				B3E5258828AB2BFC00FBA21C /* SubInfoEntity.swift */,
 				B3E5259028AB735000FBA21C /* ReleaseNoteEntity.swift */,
 				B3E5259428AB821000FBA21C /* PreviewEntity.swift */,
+				B3E5259E28ABCBBB00FBA21C /* DescriptionEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -403,7 +409,9 @@
 				B3E5256B28AA28C200FBA21C /* DefaultSearchAppRepository.swift in Sources */,
 				B3E5257428AA4CE900FBA21C /* Observable.swift in Sources */,
 				B3E5255628A645DC00FBA21C /* Endpoint.swift in Sources */,
+				B3E5259F28ABCBBB00FBA21C /* DescriptionEntity.swift in Sources */,
 				B3E5253328A526B800FBA21C /* SceneDelegate.swift in Sources */,
+				B3E525A128ABCCF400FBA21C /* DescriptionView.swift in Sources */,
 				B3E5256128A64F5700FBA21C /* NetworkError.swift in Sources */,
 				B3E5258728AAC9EA00FBA21C /* HeaderEntity.swift in Sources */,
 				B3E5259128AB735000FBA21C /* ReleaseNoteEntity.swift in Sources */,

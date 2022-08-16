@@ -38,6 +38,7 @@ private extension DetailPageUsecase {
             entity.header = headerEntity
             entity.subInfo = self?.convertToSubInfoEntity(from: dto)
             entity.releaseNote = self?.convertToReleaseNoteEntity(from: dto)
+            entity.description = self?.convertToDescriptionEntity(from: dto)
             self?.convertToPreviewEntity(from: dto) { previewEntity in
                 entity.preview = previewEntity
                 completion(entity)
@@ -100,6 +101,11 @@ private extension DetailPageUsecase {
                 }
             }
         }
+    }
+    
+    // DescriptionEntity 변환
+    func convertToDescriptionEntity(from dto: DetailPageDTO) -> DescriptionEntity {
+        return DescriptionEntity(description: dto.resultDescription, developerName: dto.sellerName)
     }
 
 }
