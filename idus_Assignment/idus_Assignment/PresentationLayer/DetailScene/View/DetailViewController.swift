@@ -132,7 +132,7 @@ private extension DetailViewController {
         // SubcollectionView AutoLayout
         NSLayoutConstraint.activate([
             subInfoCollectionView.topAnchor.constraint(equalTo: titleView.bottomAnchor, constant: 10),
-            subInfoCollectionView.leadingAnchor.constraint(equalTo: titleView.leadingAnchor),
+            subInfoCollectionView.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: 10),
             subInfoCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             subInfoCollectionView.heightAnchor.constraint(equalToConstant: 110)
         ])
@@ -143,7 +143,6 @@ private extension DetailViewController {
             releaseNoteView.leadingAnchor.constraint(equalTo: subInfoCollectionView.leadingAnchor),
             releaseNoteView.trailingAnchor.constraint(equalTo: subInfoCollectionView.trailingAnchor),
             releaseNoteView.heightAnchor.constraint(equalToConstant: 110),
-//            releaseNoteView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         
         
@@ -165,6 +164,11 @@ extension DetailViewController: UICollectionViewDelegate, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("selected")
+        guard let cell = collectionView.cellForItem(at: indexPath) as? PreviewCell else { return }
+        guard let image = cell.imageView.image else { return }
+        let screenShotVC = ScreenShotViewController()
+//        screenShotVC.modalPresentationStyle = .fullScreen
+        screenShotVC.set(image: image)
+        self.present(screenShotVC, animated: true)
     }
 }

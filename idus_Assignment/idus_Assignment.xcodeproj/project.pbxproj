@@ -41,6 +41,7 @@
 		B3E5259528AB821000FBA21C /* PreviewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5259428AB821000FBA21C /* PreviewEntity.swift */; };
 		B3E5259928AB873C00FBA21C /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5259828AB873C00FBA21C /* PreviewCell.swift */; };
 		B3E5259B28AB88AC00FBA21C /* PreviewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5259A28AB88AC00FBA21C /* PreviewDataSource.swift */; };
+		B3E5259D28AB978900FBA21C /* ScreenShotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5259C28AB978900FBA21C /* ScreenShotViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		B3E5259428AB821000FBA21C /* PreviewEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewEntity.swift; sourceTree = "<group>"; };
 		B3E5259828AB873C00FBA21C /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
 		B3E5259A28AB88AC00FBA21C /* PreviewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDataSource.swift; sourceTree = "<group>"; };
+		B3E5259C28AB978900FBA21C /* ScreenShotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShotViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 				B3E5258A28AB2CF100FBA21C /* SubInfoCell.swift */,
 				B3E5259A28AB88AC00FBA21C /* PreviewDataSource.swift */,
 				B3E5259828AB873C00FBA21C /* PreviewCell.swift */,
+				B3E5259C28AB978900FBA21C /* ScreenShotViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				B3E5253128A526B800FBA21C /* AppDelegate.swift in Sources */,
 				B3E5256D28AA2AA200FBA21C /* JSONConverter.swift in Sources */,
 				B3E5257C28AA585B00FBA21C /* DetailViewController.swift in Sources */,
+				B3E5259D28AB978900FBA21C /* ScreenShotViewController.swift in Sources */,
 				B3E5258F28AB6CEC00FBA21C /* ReleaseNoteView.swift in Sources */,
 				B3E5256728A656CA00FBA21C /* DetailPageDTO.swift in Sources */,
 				B3E5258D28AB36CE00FBA21C /* SubInfoDataSource.swift in Sources */,

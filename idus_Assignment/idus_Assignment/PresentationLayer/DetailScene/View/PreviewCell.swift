@@ -11,7 +11,7 @@ class PreviewCell: UICollectionViewCell {
     
     static let reuseIdentifier = "PreviewCell"
     
-    private var imageView: UIImageView = {
+    private(set) var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
