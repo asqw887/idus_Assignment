@@ -10,4 +10,5 @@ import Foundation
 struct DetailPageEntity {
     var header: HeaderEntity?
     var subInfo: [SubInfoEntity]?
+    var releaseNote: ReleaseNoteEntity?
 }

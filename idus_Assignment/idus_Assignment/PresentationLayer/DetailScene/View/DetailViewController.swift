@@ -43,11 +43,18 @@ class DetailViewController: UIViewController {
         return collectionView
     }()
     
+    private var releaseNoteView: ReleaseNoteView = {
+        let view = ReleaseNoteView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
         configureLayout()
         bind()
+        
 
     }
 
@@ -63,9 +70,10 @@ private extension DetailViewController {
     
     func bind(){
         detailVM.detaPageData.bind { [weak self] detailPageEntity in
-            guard let header = detailPageEntity?.header, let subInfo = detailPageEntity?.subInfo else { return }
+            guard let header = detailPageEntity?.header, let subInfo = detailPageEntity?.subInfo, let releaseNote = detailPageEntity?.releaseNote else { return }
             self?.titleView.set(entity: header)
             self?.subInfoDataSource = SubInfoDataSource(entity: subInfo)
+            self?.releaseNoteView.set(entity: releaseNote)
             
             DispatchQueue.main.async {
                 self?.subInfoCollectionView.dataSource = self?.subInfoDataSource
@@ -79,6 +87,7 @@ private extension DetailViewController {
         scrollView.addSubview(contentView)
         contentView.addSubview(titleView)
         contentView.addSubview(subInfoCollectionView)
+        contentView.addSubview(releaseNoteView)
         
         
         // ScrollView AutoLayout
@@ -111,6 +120,15 @@ private extension DetailViewController {
             subInfoCollectionView.leadingAnchor.constraint(equalTo: titleView.leadingAnchor),
             subInfoCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             subInfoCollectionView.heightAnchor.constraint(equalToConstant: 110)
+        ])
+        
+        // ReleaseNoteView AutoLayout
+        NSLayoutConstraint.activate([
+            releaseNoteView.topAnchor.constraint(equalTo: subInfoCollectionView.bottomAnchor, constant: 10),
+            releaseNoteView.leadingAnchor.constraint(equalTo: subInfoCollectionView.leadingAnchor),
+            releaseNoteView.trailingAnchor.constraint(equalTo: subInfoCollectionView.trailingAnchor),
+//            releaseNoteView.heightAnchor.constraint(equalToConstant: releaseNoteView.frame.height),
+            releaseNoteView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
 }

@@ -49,7 +49,7 @@ class TitleView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //TODO: 외부에서 엔티티를 받아와 컴포넌트를 셋팅해주는 메소드
+    //TODO: 외부에서 엔티티를 받아와 컴포넌트를 셋팅
     func set(entity: HeaderEntity){
         DispatchQueue.main.async {
             self.nameLabel.text = entity.appName

@@ -37,6 +37,7 @@ private extension DetailPageUsecase {
         convertToHeaderEntity(from: dto) { [weak self] headerEntity in
             entity.header = headerEntity
             entity.subInfo = self?.convertToSubInfoEntity(from: dto)
+            entity.releaseNote = self?.convertToReleaseNoteEntity(from: dto)
             completion(entity)
         }
         
@@ -67,5 +68,10 @@ private extension DetailPageUsecase {
         return subInfoEntites
     }
     
-    
+    func convertToReleaseNoteEntity(from dto: DetailPageDTO) -> ReleaseNoteEntity {
+        let versionStr = "버전 \(dto.version)"
+        //TODO: N일전으로 변경하는 로직 추가하기
+        return ReleaseNoteEntity(version: versionStr, releaseDate: "3일전", releaseNote: dto.releaseNotes)
+    }
+
 }
