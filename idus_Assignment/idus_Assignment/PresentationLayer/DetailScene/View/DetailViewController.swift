@@ -10,6 +10,7 @@ import UIKit
 class DetailViewController: UIViewController {
 
     private var detailVM = DetailViewModel()
+    private var subInfoDataSource: SubInfoDataSource?
     
     private var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -27,6 +28,15 @@ class DetailViewController: UIViewController {
         let view = TitleView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
+    }()
+    
+    private lazy var subInfoCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(SubInfoCell.self, forCellWithReuseIdentifier: SubInfoCell.reuseIdentifier)
+        return collectionView
     }()
     
     override func viewDidLoad() {
@@ -49,9 +59,19 @@ private extension DetailViewController {
     
     func bind(){
         detailVM.detaPageData.bind { [weak self] detailPageEntity in
-            guard let header = detailPageEntity?.header else { return }
+            guard let header = detailPageEntity?.header, let subInfo = detailPageEntity?.subInfo else { return }
             self?.titleView.set(entity: header)
+            
+            self?.subInfoDataSource = SubInfoDataSource(entity: subInfo, didLoadData: {
+                DispatchQueue.main.async {
+                    self?.subInfoCollectionView.reloadData()
+                }
+            })
         }
+    }
+    
+    private func setDataSource() {
+        
     }
     
     func configureLayout(){
@@ -84,5 +104,12 @@ private extension DetailViewController {
             titleView.heightAnchor.constraint(equalToConstant: 120)
         ])
         
+        // SubcollectionView AutoLayout
+        NSLayoutConstraint.activate([
+            subInfoCollectionView.topAnchor.constraint(equalTo: titleView.bottomAnchor, constant: 10),
+            subInfoCollectionView.leadingAnchor.constraint(equalTo: titleView.leadingAnchor),
+            subInfoCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            titleView.heightAnchor.constraint(equalToConstant: 60)
+        ])
     }
 }

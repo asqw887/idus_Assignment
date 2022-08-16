@@ -32,6 +32,9 @@
 		B3E5258228AAC48800FBA21C /* DetailPageUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5258128AAC48700FBA21C /* DetailPageUsecase.swift */; };
 		B3E5258528AAC97A00FBA21C /* DetailPageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5258428AAC97A00FBA21C /* DetailPageEntity.swift */; };
 		B3E5258728AAC9EA00FBA21C /* HeaderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5258628AAC9EA00FBA21C /* HeaderEntity.swift */; };
+		B3E5258928AB2BFC00FBA21C /* SubInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5258828AB2BFC00FBA21C /* SubInfoEntity.swift */; };
+		B3E5258B28AB2CF100FBA21C /* SubInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5258A28AB2CF100FBA21C /* SubInfoCell.swift */; };
+		B3E5258D28AB36CE00FBA21C /* SubInfoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5258C28AB36CE00FBA21C /* SubInfoDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		B3E5258128AAC48700FBA21C /* DetailPageUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageUsecase.swift; sourceTree = "<group>"; };
 		B3E5258428AAC97A00FBA21C /* DetailPageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageEntity.swift; sourceTree = "<group>"; };
 		B3E5258628AAC9EA00FBA21C /* HeaderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderEntity.swift; sourceTree = "<group>"; };
+		B3E5258828AB2BFC00FBA21C /* SubInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubInfoEntity.swift; sourceTree = "<group>"; };
+		B3E5258A28AB2CF100FBA21C /* SubInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubInfoCell.swift; sourceTree = "<group>"; };
+		B3E5258C28AB36CE00FBA21C /* SubInfoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubInfoDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +261,8 @@
 			children = (
 				B3E5257B28AA585B00FBA21C /* DetailViewController.swift */,
 				B3E5257F28AA871300FBA21C /* TitleView.swift */,
+				B3E5258A28AB2CF100FBA21C /* SubInfoCell.swift */,
+				B3E5258C28AB36CE00FBA21C /* SubInfoDataSource.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -272,6 +280,7 @@
 			children = (
 				B3E5258428AAC97A00FBA21C /* DetailPageEntity.swift */,
 				B3E5258628AAC9EA00FBA21C /* HeaderEntity.swift */,
+				B3E5258828AB2BFC00FBA21C /* SubInfoEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -347,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3E5255128A641AF00FBA21C /* SearchViewModel.swift in Sources */,
+				B3E5258B28AB2CF100FBA21C /* SubInfoCell.swift in Sources */,
 				B3E5257228AA2EB300FBA21C /* SearchAPPUsecase.swift in Sources */,
 				B3E5258528AAC97A00FBA21C /* DetailPageEntity.swift in Sources */,
 				B3E5255B28A648C200FBA21C /* Endpointable.swift in Sources */,
@@ -355,12 +365,14 @@
 				B3E5256428A6503100FBA21C /* NetworkServiceable.swift in Sources */,
 				B3E5255F28A64F1F00FBA21C /* NetworkService.swift in Sources */,
 				B3E5258028AA871300FBA21C /* TitleView.swift in Sources */,
+				B3E5258928AB2BFC00FBA21C /* SubInfoEntity.swift in Sources */,
 				B3E5258228AAC48800FBA21C /* DetailPageUsecase.swift in Sources */,
 				B3E5257E28AA807F00FBA21C /* DetailViewModel.swift in Sources */,
 				B3E5253128A526B800FBA21C /* AppDelegate.swift in Sources */,
 				B3E5256D28AA2AA200FBA21C /* JSONConverter.swift in Sources */,
 				B3E5257C28AA585B00FBA21C /* DetailViewController.swift in Sources */,
 				B3E5256728A656CA00FBA21C /* DetailPageDTO.swift in Sources */,
+				B3E5258D28AB36CE00FBA21C /* SubInfoDataSource.swift in Sources */,
 				B3E5254F28A53EEE00FBA21C /* SearchViewController.swift in Sources */,
 				B3E5256B28AA28C200FBA21C /* DefaultSearchAppRepository.swift in Sources */,
 				B3E5257428AA4CE900FBA21C /* Observable.swift in Sources */,

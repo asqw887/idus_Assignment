@@ -9,4 +9,5 @@ import Foundation
 
 struct DetailPageEntity {
     var header: HeaderEntity?
+    var subInfo: [SubInfoEntity]?
 }

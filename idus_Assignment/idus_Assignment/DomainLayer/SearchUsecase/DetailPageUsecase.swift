@@ -32,14 +32,13 @@ private extension DetailPageUsecase {
     
     func convertToEntity(from dto: DetailPageDTO, completion: @escaping (DetailPageEntity) -> Void) {
         
-        DispatchQueue.global().async { [weak self] in
-            var entity = DetailPageEntity()
-            
-            self?.convertToHeaderEntity(from: dto) { headerEntity in
-                entity.header = headerEntity
-                completion(entity)
-            }
+        var entity = DetailPageEntity()
+        
+        convertToHeaderEntity(from: dto) { headerEntity in
+            entity.header = headerEntity
+            completion(entity)
         }
+        
         
     }
     
@@ -51,7 +50,21 @@ private extension DetailPageUsecase {
             }
             completion(HeaderEntity(image: image, appName: dto.trackCensoredName))
         }
-        
     }
+    
+    func convertToSubInfoEntity(from dto: DetailPageDTO) -> [SubInfoEntity] {
+        var subInfoEntites = [SubInfoEntity]()
+        
+        subInfoEntites.append(SubInfoEntity(title: "평가", content: "\(round(dto.averageUserRating * 10) / 10)", footer: "★★★★★"))
+        subInfoEntites.append(SubInfoEntity(title: "연령", content: dto.contentAdvisoryRating, footer: "세"))
+        subInfoEntites.append(SubInfoEntity(title: "개발자", content: nil, footer: dto.artistName))
+        
+        let languageContent: String = dto.languageCodesISO2A.contains("KO") ? "KO" : dto.languageCodesISO2A.first!
+        let languageCountStr: String = dto.languageCodesISO2A.count == 1 ? "" : "+\(dto.languageCodesISO2A.count - 1)개 언어"
+        subInfoEntites.append(SubInfoEntity(title: "언어", content: languageContent, footer: languageCountStr))
+
+        return subInfoEntites
+    }
+    
     
 }
