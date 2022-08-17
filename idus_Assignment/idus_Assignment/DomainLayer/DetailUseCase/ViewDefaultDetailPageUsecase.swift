@@ -79,7 +79,9 @@ private extension ViewDefaultDetailPageUsecase {
     func convertToReleaseNoteEntity(from dto: DetailPageDTO) -> ReleaseNoteEntity {
         let versionStr = "버전 \(dto.version)"
         //TODO: N일전으로 변경하는 로직 추가하기
-        return ReleaseNoteEntity(version: versionStr, releaseDate: "3일전", releaseNote: dto.releaseNotes)
+        //"2022-08-10T03:08:21Z"
+        let releaseDate  = dto.currentVersionReleaseDate.toDate()!
+        return ReleaseNoteEntity(version: versionStr, releaseDate: releaseDate.toStringOffsetToday(), releaseNote: dto.releaseNotes)
     }
     
     
