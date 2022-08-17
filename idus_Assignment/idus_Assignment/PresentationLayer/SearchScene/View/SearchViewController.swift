@@ -17,6 +17,11 @@ class SearchViewController: UIViewController {
         setNavigationController()
         bind()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationItem.searchController?.searchBar.text = ""
+    }
 }
 
 private extension SearchViewController {
