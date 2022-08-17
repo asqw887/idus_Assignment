@@ -11,7 +11,7 @@ final class SearchViewModel {
     
     var isValidAppID: Observable<Bool> = Observable(false)
     
-    private var searchUsecase = SearchAPPUsecase()
+    private var searchUsecase: SearchUsecase = SearchAPPUsecase()
     
     func searchAppID(with appID: String){
         searchUsecase.execute(with: appID) { [weak self] isValid in

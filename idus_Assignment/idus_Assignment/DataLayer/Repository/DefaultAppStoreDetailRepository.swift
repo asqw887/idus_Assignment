@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DefaultSearchAppRepository: SearchRepository {
+final class DefaultAppStoreDetailRepository: APPStoreDetailRepository {
         
     let networkService: NetworkServiceable = NetworkService()
     

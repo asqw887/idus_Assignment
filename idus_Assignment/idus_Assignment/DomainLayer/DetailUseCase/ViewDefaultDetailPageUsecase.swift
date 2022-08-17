@@ -7,10 +7,9 @@
 
 import Foundation
 
-final class DetailPageUsecase {
+final class ViewDefaultDetailPageUsecase: ViewDetailPageUsecase {
     
-    // TODO: 네이밍 변경
-    private var searchRepository: SearchRepository = DefaultSearchAppRepository()
+    private var searchRepository: APPStoreDetailRepository = DefaultAppStoreDetailRepository()
     
     func execute(with appID: String, completion: @escaping (DetailPageEntity) -> Void) {
         searchRepository.requestIsValidAppID(appID: appID) {[weak self] appSearchDTO in
@@ -27,7 +26,7 @@ final class DetailPageUsecase {
 }
 
 
-private extension DetailPageUsecase {
+private extension ViewDefaultDetailPageUsecase {
     
     func convertToEntity(from dto: DetailPageDTO, completion: @escaping (DetailPageEntity) -> Void) {
         

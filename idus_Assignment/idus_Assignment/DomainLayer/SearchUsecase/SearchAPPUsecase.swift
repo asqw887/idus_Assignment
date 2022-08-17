@@ -7,9 +7,9 @@
 
 import Foundation
 
-final class SearchAPPUsecase {
+final class SearchAPPUsecase: SearchUsecase {
     
-    private var searchRepository: SearchRepository = DefaultSearchAppRepository()
+    private var searchRepository: APPStoreDetailRepository = DefaultAppStoreDetailRepository()
     
     func execute(with appID: String, completion: @escaping (Bool) -> Void) {
         searchRepository.requestIsValidAppID(appID: appID) { appSearchDTO in

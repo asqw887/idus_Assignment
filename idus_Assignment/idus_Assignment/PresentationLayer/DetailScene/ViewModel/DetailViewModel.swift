@@ -9,7 +9,7 @@ import Foundation
 
 final class DetailViewModel {
     
-    private var detailPageUsecase = DetailPageUsecase()
+    private var detailPageUsecase: ViewDetailPageUsecase = ViewDefaultDetailPageUsecase()
     var detaPageData: Observable<DetailPageEntity?> = Observable(nil)
     
     func enquireAllData(with appID: String) {
