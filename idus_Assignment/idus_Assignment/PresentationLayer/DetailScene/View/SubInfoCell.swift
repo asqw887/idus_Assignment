@@ -15,15 +15,15 @@ class SubInfoCell: UICollectionViewCell {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.distribution = .fill
+        stackView.distribution = .fillProportionally
         stackView.alignment = .center
         stackView.spacing = 5
+        stackView.sizeToFit()
         return stackView
     }()
     
     private var titleLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15)
         return label
@@ -31,7 +31,6 @@ class SubInfoCell: UICollectionViewCell {
     
     private var contentLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .systemGray
         label.font = .boldSystemFont(ofSize: 22)
         return label
@@ -39,7 +38,6 @@ class SubInfoCell: UICollectionViewCell {
     
     private var footerLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15)
         return label
@@ -47,7 +45,6 @@ class SubInfoCell: UICollectionViewCell {
     
     private var contentImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.tintColor = .systemGray
         imageView.sizeToFit()
         return imageView
@@ -74,6 +71,7 @@ class SubInfoCell: UICollectionViewCell {
             return }
         contentLabel.text = content
         configureLayout(isShowImage: false)
+        contentView.invalidateIntrinsicContentSize()
     }
 
 }
@@ -82,7 +80,7 @@ private extension SubInfoCell {
     
     func configureLayout(isShowImage: Bool) {
         
-        self.addSubview(stackView)
+        contentView.addSubview(stackView)
         
         stackView.addArrangedSubview(titleLabel)
         if isShowImage {
@@ -93,11 +91,11 @@ private extension SubInfoCell {
         stackView.addArrangedSubview(footerLabel)
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            stackView.widthAnchor.constraint(equalTo: contentView.widthAnchor)
+            
+            stackView.heightAnchor.constraint(equalTo: contentView.heightAnchor),
+            stackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            stackView.widthAnchor.constraint(equalToConstant: 110),
+            stackView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
         ])
     }
 }

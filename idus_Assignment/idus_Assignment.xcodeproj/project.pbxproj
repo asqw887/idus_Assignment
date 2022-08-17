@@ -291,9 +291,9 @@
 			children = (
 				B3E5257B28AA585B00FBA21C /* DetailViewController.swift */,
 				B3E5257F28AA871300FBA21C /* TitleView.swift */,
-				B3E5258E28AB6CEC00FBA21C /* ReleaseNoteView.swift */,
 				B3E5258C28AB36CE00FBA21C /* SubInfoDataSource.swift */,
 				B3E5258A28AB2CF100FBA21C /* SubInfoCell.swift */,
+				B3E5258E28AB6CEC00FBA21C /* ReleaseNoteView.swift */,
 				B3E5259A28AB88AC00FBA21C /* PreviewDataSource.swift */,
 				B3E5259828AB873C00FBA21C /* PreviewCell.swift */,
 				B3E5259C28AB978900FBA21C /* ScreenShotViewController.swift */,

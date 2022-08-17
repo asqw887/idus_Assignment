@@ -36,7 +36,7 @@ class DetailViewController: UIViewController {
     private lazy var subInfoCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 90, height: 90)
+        layout.itemSize = CGSize(width: 110, height: 80)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout) 
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(SubInfoCell.self, forCellWithReuseIdentifier: SubInfoCell.reuseIdentifier)
@@ -149,7 +149,7 @@ private extension DetailViewController {
             titleView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             titleView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             titleView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            titleView.heightAnchor.constraint(equalToConstant: 120)
+            titleView.heightAnchor.constraint(equalToConstant: 100)
         ])
         
         // SubcollectionView AutoLayout
@@ -157,7 +157,7 @@ private extension DetailViewController {
             subInfoCollectionView.topAnchor.constraint(equalTo: titleView.bottomAnchor, constant: 10),
             subInfoCollectionView.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: 10),
             subInfoCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            subInfoCollectionView.heightAnchor.constraint(equalToConstant: 110)
+            subInfoCollectionView.heightAnchor.constraint(equalToConstant: 80)
         ])
         
         // ReleaseNoteView AutoLayout
