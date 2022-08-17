@@ -45,8 +45,7 @@ class InformationCell: UITableViewCell {
 private extension InformationCell {
     
     func configureLayout() {
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(contentLabel)
+        contentView.addSubviews(titleLabel,contentLabel)
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),

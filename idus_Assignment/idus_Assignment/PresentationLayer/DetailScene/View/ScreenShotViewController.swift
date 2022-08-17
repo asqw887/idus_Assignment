@@ -42,8 +42,7 @@ class ScreenShotViewController: UIViewController {
 
 private extension ScreenShotViewController {
     func configureLayout() {
-        view.addSubview(doneButton)
-        view.addSubview(imageView)
+        view.addSubviews(doneButton,imageView)
         
         NSLayoutConstraint.activate([
             doneButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),

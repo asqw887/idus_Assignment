@@ -50,8 +50,7 @@ class DescriptionView: UIView {
 
 private extension DescriptionView {
     func configureLayout() {
-        self.addSubview(descriptionTextView)
-        self.addSubview(moreButton)
+        self.addSubviews(descriptionTextView,moreButton)
         
         NSLayoutConstraint.activate([
             descriptionTextView.topAnchor.constraint(equalTo: self.topAnchor),

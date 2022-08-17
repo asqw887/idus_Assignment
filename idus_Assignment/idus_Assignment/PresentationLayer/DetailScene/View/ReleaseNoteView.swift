@@ -70,12 +70,7 @@ class ReleaseNoteView: UIView {
 private extension ReleaseNoteView {
     
     func configureLayout() {
-        self.addSubview(titleLabel)
-        self.addSubview(historyButton)
-        self.addSubview(versionLabel)
-        self.addSubview(releaseDateLabel)
-        self.addSubview(releaseNoteLabel)
-        
+        self.addSubviews(titleLabel,historyButton,versionLabel,releaseDateLabel,releaseNoteLabel)
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: self.topAnchor),

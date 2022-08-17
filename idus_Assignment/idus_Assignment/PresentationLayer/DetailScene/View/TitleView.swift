@@ -61,10 +61,7 @@ class TitleView: UIView {
 private extension TitleView {
     
     func configureLayout(){
-        self.addSubview(imageView)
-        self.addSubview(nameLabel)
-        self.addSubview(openButton)
-        
+        self.addSubviews(imageView,nameLabel,openButton)
         
         // ImageView AutoLayout
         NSLayoutConstraint.activate([

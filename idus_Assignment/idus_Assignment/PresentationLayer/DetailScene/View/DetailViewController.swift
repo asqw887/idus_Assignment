@@ -119,13 +119,7 @@ private extension DetailViewController {
     func configureLayout(){
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
-        contentView.addSubview(titleView)
-        contentView.addSubview(subInfoCollectionView)
-        contentView.addSubview(releaseNoteView)
-        contentView.addSubview(previewCollectionView)
-        contentView.addSubview(descriptionView)
-        contentView.addSubview(informationTableView)
-        
+        contentView.addSubviews(titleView,subInfoCollectionView,releaseNoteView,previewCollectionView,descriptionView,informationTableView)
         
         // ScrollView AutoLayout
         NSLayoutConstraint.activate([

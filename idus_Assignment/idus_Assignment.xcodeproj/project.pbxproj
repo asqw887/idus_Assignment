@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3BE5C4228ACCE6600DB66A3 /* UIView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BE5C4128ACCE6600DB66A3 /* UIView +.swift */; };
 		B3E5253128A526B800FBA21C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5253028A526B800FBA21C /* AppDelegate.swift */; };
 		B3E5253328A526B800FBA21C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5253228A526B800FBA21C /* SceneDelegate.swift */; };
 		B3E5253A28A526BB00FBA21C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3E5253928A526BB00FBA21C /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B3BE5C4128ACCE6600DB66A3 /* UIView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView +.swift"; sourceTree = "<group>"; };
 		B3E5252D28A526B800FBA21C /* idus_Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = idus_Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E5253028A526B800FBA21C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3E5253228A526B800FBA21C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B3BE5C3F28ACCE0100DB66A3 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B3E5256C28AA2AA200FBA21C /* JSONConverter.swift */,
+				B3E5257328AA4CE900FBA21C /* Observable.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		B3BE5C4028ACCE2200DB66A3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B3E525A828AC098B00FBA21C /* DynamicSizeTableView.swift */,
+				B3BE5C4128ACCE6600DB66A3 /* UIView +.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		B3E5252428A526B800FBA21C = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +148,7 @@
 		B3E5252F28A526B800FBA21C /* idus_Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				B3BE5C3F28ACCE0100DB66A3 /* Utility */,
 				B3E5254928A53BF400FBA21C /* PresentationLayer */,
 				B3E5254C28A53C1B00FBA21C /* DomainLayer */,
 				B3E5254428A5338200FBA21C /* DataLayer */,
@@ -136,9 +157,6 @@
 				B3E5253928A526BB00FBA21C /* Assets.xcassets */,
 				B3E5253B28A526BB00FBA21C /* LaunchScreen.storyboard */,
 				B3E5253E28A526BB00FBA21C /* Info.plist */,
-				B3E5256C28AA2AA200FBA21C /* JSONConverter.swift */,
-				B3E5257328AA4CE900FBA21C /* Observable.swift */,
-				B3E525A828AC098B00FBA21C /* DynamicSizeTableView.swift */,
 			);
 			path = idus_Assignment;
 			sourceTree = "<group>";
@@ -174,6 +192,7 @@
 		B3E5254928A53BF400FBA21C /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				B3BE5C4028ACCE2200DB66A3 /* Common */,
 				B3E5257528AA57F900FBA21C /* SearchScene */,
 				B3E5257728AA582800FBA21C /* DetailScene */,
 			);
@@ -445,6 +464,7 @@
 				B3E5257C28AA585B00FBA21C /* DetailViewController.swift in Sources */,
 				B3E5259D28AB978900FBA21C /* ScreenShotViewController.swift in Sources */,
 				B3E5258F28AB6CEC00FBA21C /* ReleaseNoteView.swift in Sources */,
+				B3BE5C4228ACCE6600DB66A3 /* UIView +.swift in Sources */,
 				B3E5256728A656CA00FBA21C /* DetailPageDTO.swift in Sources */,
 				B3E5258D28AB36CE00FBA21C /* SubInfoDataSource.swift in Sources */,
 				B3E5254F28A53EEE00FBA21C /* SearchViewController.swift in Sources */,
