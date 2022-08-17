@@ -14,7 +14,7 @@ final class ViewDefaultDetailPageUsecase: ViewDetailPageUsecase {
     func execute(with appID: String, completion: @escaping (DetailPageEntity) -> Void) {
         searchRepository.requestIsValidAppID(appID: appID) {[weak self] appSearchDTO in
             
-            guard let detailPageDTO = appSearchDTO.results.first else { print(NetworkError.noData)
+            guard let dto = appSearchDTO, let detailPageDTO = dto.results.first else { print(NetworkError.noData)
                 return }
             
             self?.convertToEntity(from: detailPageDTO, completion: { entity in

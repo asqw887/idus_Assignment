@@ -8,6 +8,6 @@
 import UIKit
 
 protocol APPStoreDetailRepository {
-    func requestIsValidAppID(appID: String, completion: @escaping (APPSearchDTO) -> Void)
+    func requestIsValidAppID(appID: String, completion: @escaping (APPSearchDTO?) -> Void)
     func fetchImage(with url: URL?, completion: @escaping (UIImage?) -> Void)
 }

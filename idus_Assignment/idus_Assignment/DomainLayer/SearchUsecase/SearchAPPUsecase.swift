@@ -13,11 +13,11 @@ final class SearchAPPUsecase: SearchUsecase {
     
     func execute(with appID: String, completion: @escaping (Bool) -> Void) {
         searchRepository.requestIsValidAppID(appID: appID) { appSearchDTO in
-            if appSearchDTO.resultCount > 0 {
-                completion(true)
-            } else {
+            guard let _ = appSearchDTO else {
                 completion(false)
+                return
             }
+            completion(true)
         }
     }
     
